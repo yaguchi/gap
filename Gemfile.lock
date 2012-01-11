@@ -1,0 +1,15 @@
+GIT
+  remote: https://github.com/yaguchi/gap.git
+  revision: 0c5680afe2d0d06a64414cbe88070fcce73ea990
+  specs:
+    gap (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gap!
