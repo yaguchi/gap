@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+`echo hoge`
+
+#require 'rubygems' unless ENV['NO_RUBYGEMS']
+#require 'rubigen'
+#
+#if %w(-v --version).include? ARGV.first
+#  require File.dirname(__FILE__) + "/../lib/newgem"
+#  puts "#{File.basename($0)} #{Newgem::VERSION}"
+#  exit(0)
+#end
+#
+#require 'rubigen/scripts/generate'
+#
+#require "pp"
+#RubiGen::Base.use_application_sources! :rubygems
+#RubiGen::Base.prepend_sources(*[ 
+#  RubiGen::PathSource.new(:app, File.join(File.dirname(__FILE__), "..", "app_generators")),
+#  RubiGen::PathSource.new(:app, File.join(File.dirname(__FILE__), "..", "newgem_generators")),
+#  RubiGen::PathSource.new(:app, File.join(File.dirname(__FILE__), "..", "newgem_theme_generators")),
+#  RubiGen::PathSource.new(:app, File.join(File.dirname(__FILE__), "..", "rubygems_generators"))
+#])
+## 
+## pp RubiGen::Base.sources
+#
+#if ARGV.delete "--simple"
+#  RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'newgem_simple')
+#else
+#  RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'newgem', :backtrace => true)
+#end
