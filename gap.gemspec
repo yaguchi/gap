@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require "gap/version"
+require "gap"
 
 Gem::Specification.new do |s|
   s.name        = "gap"
