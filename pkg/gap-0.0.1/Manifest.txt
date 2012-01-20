@@ -1,3 +1,4 @@
+gap.gemspec
 History.txt
 Manifest.txt
 PostInstall.txt
@@ -9,3 +10,14 @@ script/destroy
 script/generate
 test/test_gap.rb
 test/test_helper.rb
+bin/gap
+lib/gap/cli.rb
+lib/gap/defalut_recipe.rb
+lib/gap/god_erb.rb
+lib/gap/patch.rb
+lib/gap/tasks.rb
+lib/gap/sudo_run.rb
+lib/gap/tmpl.erb
+lib/gap/recipes/hg.rb
+lib/gap/recipes/sys.rb
+lib/gap/recipes/ruby.rb

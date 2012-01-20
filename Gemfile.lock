@@ -1,15 +1,32 @@
 GIT
   remote: https://github.com/yaguchi/gap.git
-  revision: 0c5680afe2d0d06a64414cbe88070fcce73ea990
+  revision: 76aef5a18f885ce3d28c89727453251d36e65971
   specs:
     gap (0.0.1)
 
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.9)
+    activesupport (2.3.14)
+    hoe (2.12.5)
+      rake (~> 0.8)
+    i18n (0.6.0)
+    newgem (1.5.3)
+      RedCloth (>= 4.1.1)
+      activesupport (~> 2.3.4)
+      hoe (>= 2.4.0)
+      rubigen (>= 1.5.3)
+      syntax (>= 1.0.0)
+    rake (0.9.2.2)
+    rubigen (1.5.7)
+      activesupport (>= 2.3.5)
+      i18n
+    syntax (1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   gap!
+  newgem
