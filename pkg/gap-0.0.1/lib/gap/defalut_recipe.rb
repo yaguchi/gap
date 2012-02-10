@@ -1,7 +1,9 @@
-#load File.expand_path './recipes/hg.rb', File.dirname(__FILE__)
-#load File.expand_path './recipes/sys.rb', File.dirname(__FILE__)
-load 'gap/recipes/hg.rb'
-load 'gap/recipes/sys.rb'
+load File.expand_path './recipes/hg.rb', File.dirname(__FILE__)
+load File.expand_path './recipes/sys.rb', File.dirname(__FILE__)
+
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
+set :rvm_bin_path, "/usr/local/rvm/bin/"
 
 set :stages, %w(dev alpha beta pro)
 set :default_stage, "dev"

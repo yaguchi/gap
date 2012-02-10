@@ -15,8 +15,10 @@ Gem::Specification.new do |s|
   s.description = "gap is a wrapper of capistrano. gap = god + cap"
 
   #s.required_rubygems_version = ">= 1.3.6"
-  s.add_dependency("capistrano", ">= 2.9.0")
-  s.add_dependency("god", "~> 0.11.0")
+  #s.add_runtime_dependency("capistrano", ">= 2.9.0")
+  #s.add_runtime_dependency("god", "~> 0.11.0")
+  s.add_dependency(%q<capistrano>, [">= 2.9.0"])
+  s.add_dependency(%q<god>, ["~> 0.11.0"])
 
   s.files        = Dir.glob("lib/**/*") + %w(README.rdoc Rakefile)
   s.require_path = 'lib'

@@ -1,0 +1,106 @@
+gap
+
+ruby 
+
+-----------------------------------------------------------------------------------------------
+あなたがすべき事
+1 gap のインストール
+
+gem install gap
+gem install capistrano
+gem install capistrano_colors
+
+2 homeのrootに.caprcファイルを作り、設定
+
+set :user, "hoge"                                   #アプリケーションサーバへのログインユーザ名
+set :sudo_password, "hogehoge"                      #サーバにおける、sudoパスワード
+set :scm_username, "hoge"                           #リポジトリサーバへのログインユーザ名
+
+3 (アプリケーション)/config/gap.yml に設定ファイルを作成
+
+4 後はわくわくコマンド。Have a good gap!
+
+-----------------------------------------------------------------------------------------------
+設定ファイルの書き方 #(app_root)/config/gap.yml
+
+
+global:                                             #グローバルな環境変数設定
+  set:                                              #変数を定義
+    application: zebra                              #アプリケーション名
+    repository:  "ssh://xxxx//var/apps/dev/hoge"    #リポジトリのuri
+    rvm_god_string: 1.9.2@god                       #godのgemset
+    rvm_ruby_string: 1.8.7@hoge                     #appのgemset
+
+local:
+  rails:
+    task:                                           #コマンドを定義
+      start: rails server                           #gap local rails start
+      stop:                                         #gap local rails stop
+      restart:
+  resque: 
+    task:
+      start:                                        #gap local resque start
+      stop:                                         #gap local resque stop
+      restart:
+  
+dev:
+  role:
+    web: "xxxx"                    #deploy先を指定
+  rails:
+    task:
+      start: rails server                           #gap dev rails start
+      stop:
+      restart:
+  resque:
+    task:
+      start: 
+      stop:
+      restart:
+
+alpha:
+  role:
+    web: "xxxx"
+  set: 
+    rvm_ruby_string: 1.8.7@hoge
+    repository:  "/var/apps/dev/hoge"
+  rails:
+    set:
+      god: true                                     #プロセスをgodで監視
+      pid_file:                                     #godを使うときは、pidを指定する
+    task:
+      start: rails server                           #gap dev rails start
+      stop:
+      restart:
+  resque:
+    set:
+      god: true
+      pid_file:
+    task:
+      start: 
+      stop:
+      restart:
+
+beta:
+pro:
+
+-----------------------------------------------------------------------------------------------
+コマンド
+alpha環境でdeploy
+-> gap alpha deploy
+
+alpha環境でproject起動
+-> gap alpha start
+
+alpha環境でrailsだけ起動
+-> gap alpha rails start
+
+alpha環境でgodを動かす環境構築
+-> gap alpha god:setup
+
+alpha環境でgodに新しい設定ファイルをloadさせる(設定ファイルも自動作成）
+-> gap alpha god:config
+
+alpha環境でrailsだけgodに新しい設定ファイルをloadさせる(設定ファイルも自動作成）
+-> gap alpha rails god:config
+
+

@@ -2,7 +2,7 @@ gap.gemspec
 History.txt
 Manifest.txt
 PostInstall.txt
-README.rdoc
+README
 Rakefile
 lib/gap.rb
 script/console
@@ -21,3 +21,5 @@ lib/gap/tmpl.erb
 lib/gap/recipes/hg.rb
 lib/gap/recipes/sys.rb
 lib/gap/recipes/ruby.rb
+lib/gap/recipes/god.rb
+lib/gap/recipes/deploy.rb
