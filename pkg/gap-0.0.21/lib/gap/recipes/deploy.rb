@@ -2,7 +2,7 @@ namespace :deploy do
 
   task :default do
     hg.fetch
-    restart
+    reload
   end
 
   task :setup do

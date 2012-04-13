@@ -10,25 +10,13 @@ module Gap
       return unless value
       #gap dev start,restart,god
       %w(role set task).each {|key| value.delete(key)}
-      %w(start reload).each do |com|
+      %w(start stop reload restart).each do |com|
         task(com) do
-          value.each do |app, commands|
+          value.to_a.each do |app, commands|
             send(app)
             send(com) if commands["task"][com]
           end
         end
-      end
-
-      task(:stop) do
-        value.to_a.reverse.each do |app, commands|
-          send(app)
-          send("stop") if commands["task"]["stop"]
-        end
-      end
-
-      task(:restart) do
-        stop
-        start
       end
 
       namespace :god do
